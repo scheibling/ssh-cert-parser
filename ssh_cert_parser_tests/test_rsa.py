@@ -7,8 +7,8 @@ def do_assert(certinfo, decoded):
     assert decoded['key id'] == certinfo['identifier']
     
     # Assert that the decoding of the signature algorithm is correct
-    assert 'ssh-rsa' in decoded['signature'][0]
-    assert 'ssh-rsa' in decoded['signature key'][0]
+    assert decoded['signature'][0] in ['rsa-sha2-512', 'rsa-sha2-256', 'ssh-rsa']
+    assert decoded['signature key'][0] in ['rsa-sha2-512', 'rsa-sha2-256', 'ssh-rsa']
     
     # Assert that the times are valid integers
     assert isinstance(decoded['valid after'], int)
