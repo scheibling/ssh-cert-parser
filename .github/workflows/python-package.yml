@@ -26,10 +26,15 @@ jobs:
           pip install -r requirements.txt
           pip install setuptools wheel twine
 
-      - name: Build and publish
-        env:
-          TWINE_USERNAME: ${{ env.GITHUB_REPOSITORY_OWNER }}
-          TWINE_PASSWORD: ${{ secrets.TEST_PYPI_KEY }}
-        run: |
-            python setup.py sdist bdist_wheel
-            twine upload --repository testpypi dist/*
+      - name: Build package
+        run: >-
+          python 
+          setup.py 
+          sdist 
+          bdist_wheel
+
+      - name: Publish to PyPi Test
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          password: ${{ secrets.TEST_PYPI_KEY }}
+          repository_url: https://test.pypi.org/legacy/
