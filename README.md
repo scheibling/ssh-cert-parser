@@ -111,4 +111,13 @@ cert_2 = parse_from_string('ecdsa-sha2-nistp521-cert-v01@openssh.com AAAAA....')
 
 cert_3 = parse_from_bytes('ecdsa-sha2-nistp521-cert-v01', b'AAAAA....')
 
+# To print the readable contents of a certificate
+print(cert_1)
+
+# To convert to string
+str_cert2 = str(cert_1)
+
+# To get a dict
+dict_cert3 = cert_1.to_dict()
+
 ```

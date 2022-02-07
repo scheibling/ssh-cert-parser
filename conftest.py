@@ -33,8 +33,7 @@ def rsa_cert_factory(tmpdir_factory, scope='session'):
     
     rsa_ca =  [
         ('rsa', '1024'),
-        ('rsa', '2048'),
-        ('rsa', '4096')
+        ('rsa', '2048')
     ]
     
     return make_certs(key_path, rsa_ca)

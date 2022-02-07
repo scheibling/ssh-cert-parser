@@ -38,3 +38,8 @@ jobs:
         with:
           password: ${{ secrets.TEST_PYPI_KEY }}
           repository_url: https://test.pypi.org/legacy/
+
+      - name: Publish to production PyPi
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          password: ${{ secrets.PROD_PYPI_KEY }}

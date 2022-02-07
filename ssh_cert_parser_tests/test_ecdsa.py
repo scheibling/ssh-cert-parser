@@ -24,14 +24,14 @@ def do_assert(certinfo, decoded):
 
 def test_parse_from_file(ecdsa_cert_factory):
     for certinfo in ecdsa_cert_factory:
-        decoded = parse_from_file(certinfo['path'])
+        decoded = parse_from_file(certinfo['path']).to_dict()
         
     do_assert(certinfo, decoded)
         
 def test_parse_from_string(ecdsa_cert_factory):
     for certinfo in ecdsa_cert_factory:
         with open(certinfo['path'], 'r') as f:
-            decoded = parse_from_string(f.read())
+            decoded = parse_from_string(f.read()).to_dict()
             
         do_assert(certinfo, decoded)
         
@@ -40,6 +40,6 @@ def test_parse_from_bytes(ecdsa_cert_factory):
         with open(certinfo['path'], 'r') as f:
             split = f.read().split(" ")
             
-            decoded = parse_from_bytes(split[0], split[1])
+            decoded = parse_from_bytes(split[0], split[1]).to_dict()
             
         do_assert(certinfo, decoded)
