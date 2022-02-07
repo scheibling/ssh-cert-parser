@@ -22,6 +22,8 @@ class Algorithm:
         
         return retn
         
+    def to_dict(self):
+        return self.decoded
         
     def do_decode(self) -> None:
         for func, key in self.format:
