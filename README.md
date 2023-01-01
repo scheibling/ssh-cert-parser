@@ -1,3 +1,8 @@
+# Notice
+This repository is not actively maintained, as this was only intended as a POC for the complete library [scheiblingco/sshkey-tools](https://github.com/scheiblingco/sshkey-tools). Leaving it archived here since it gives an easier/better understanding of the inner workings of the protocol.CERTKEYS certificates. 
+
+Any code in this repository should be thoroughly tested before implementing any of it close to any production context.
+
 # OpenSSH Certificate Parser
 A python-based OpenSSH certificate parser. Based on the gist by [@corny](https://gist.github.com/corny/8264b74a130eb663dbf3d3f0fe0e0ec9)
 
